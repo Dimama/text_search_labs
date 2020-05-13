@@ -14,3 +14,10 @@ Knuth–Morris–Pratt algorithm
 
 - lab5:
 Boyer–Moore string-search algorithm
+
+_____
+__Requirements__
+ - python 3
+ - pytest
+ - inject
+ 

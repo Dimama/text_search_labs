@@ -4,10 +4,12 @@ from string_search_base import StringSearchBase
 
 
 class NaiveSearch(StringSearchBase):
-    def search_pattern(self) -> Iterable[int]:
+    def search_pattern(self, string, pattern) -> Iterable[int]:
 
-        str_len = len(self.string)
-        pattern_len = len(self.pattern)
+        self.check_data(string, pattern)
+
+        str_len = len(string)
+        pattern_len = len(pattern)
         positions = []
 
         if pattern_len > str_len:
@@ -16,7 +18,7 @@ class NaiveSearch(StringSearchBase):
         for i in range(str_len - pattern_len + 1):
             j = 0
             for k in range(pattern_len):
-                if self.string[i + k] != self.pattern[k]:
+                if string[i + k] != pattern[k]:
                     break
                 j += 1
 
@@ -24,4 +26,3 @@ class NaiveSearch(StringSearchBase):
                 positions.append(i)
 
         return positions
-

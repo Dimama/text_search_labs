@@ -3,18 +3,20 @@ from abc import abstractmethod
 
 
 class StringSearchBase:
-    def __init__(self, string: str, pattern: str):
-        if len(string) == 0:
-            raise ValueError('String can"t be empty!')
-        self.string = string
-        self.pattern = pattern
-
     @abstractmethod
-    def search_pattern(self) -> Iterable[int]:
+    def search_pattern(self, string: str, pattern: str) -> Iterable[int]:
         """
         Search pattern in string and return positions of founded patterns,
         empty iterable if not found
 
+        :param string: string in which search pattern
+        :param pattern: pattern which need find
         :return: iterable with positions of founded pattern
         """
         raise NotImplementedError
+
+    @staticmethod
+    def check_data(string, pattern) -> None:
+        if len(string) == 0 or len(pattern) > len(string):
+            raise ValueError('Check string and pattern!')
+
