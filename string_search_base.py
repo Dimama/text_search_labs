@@ -16,7 +16,7 @@ class StringSearchBase:
         raise NotImplementedError
 
     @staticmethod
-    def check_data(string, pattern) -> None:
-        if len(string) == 0 or len(pattern) > len(string):
-            raise ValueError('Check string and pattern!')
+    def check_data(string) -> None:
+        if len(string) == 0:
+            raise ValueError('Check string size!')
 

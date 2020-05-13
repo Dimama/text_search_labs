@@ -2,11 +2,12 @@ import inject
 
 from string_search_base import StringSearchBase
 from naive_search import NaiveSearch
+from rabin_karp_search import RabinKarpSearch
 
 
 # inject search class realization
 def config(binder):
-    binder.bind_to_constructor(StringSearchBase, lambda: NaiveSearch())
+    binder.bind_to_constructor(StringSearchBase, lambda: RabinKarpSearch(7219, 256))
 
 
 inject.configure(config)

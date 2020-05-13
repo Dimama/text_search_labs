@@ -6,7 +6,7 @@ from string_search_base import StringSearchBase
 class NaiveSearch(StringSearchBase):
     def search_pattern(self, string, pattern) -> Iterable[int]:
 
-        self.check_data(string, pattern)
+        self.check_data(string)
 
         str_len = len(string)
         pattern_len = len(pattern)
