@@ -4,11 +4,12 @@ from string_search_base import StringSearchBase
 from naive_search import NaiveSearch
 from rabin_karp_search import RabinKarpSearch
 from knuth_morris_pratt_search import KMPSearch
+from boyer_moore_search import BoyerMooreSearch
 
 
 # inject search class realization
 def config(binder):
-    binder.bind_to_constructor(StringSearchBase, lambda: KMPSearch())
+    binder.bind_to_constructor(StringSearchBase, lambda: BoyerMooreSearch())
 
 
 inject.configure(config)
